@@ -73,9 +73,9 @@
                 <!-- Right Side: Navigation Links -->
                 <div class="hidden md:flex items-center gap-6 text-[15px] font-medium text-slate-600">
                     <a href="#" class="text-blue-600 hover:text-blue-700">首页</a>
-                    <a href="#api-docs" class="hover:text-slate-900 transition-colors">接口文档</a>
+                    <a href="/doc.html" class="hover:text-slate-900 transition-colors">接口文档</a>
                     <a href="#" class="hover:text-slate-900 transition-colors">SDK下载</a>
-                    <a href="#" class="flex items-center gap-1 hover:text-slate-900 transition-colors">
+                    <a href="https://github.com/lulokua/Lokua_Music" class="flex items-center gap-1 hover:text-slate-900 transition-colors">
                         <i data-lucide="github" class="w-4 h-4"></i>
                         <span>GitHub</span>
                     </a>
@@ -103,158 +103,11 @@
                     <span>立刻体验</span>
                     <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"></i>
                 </a>
-                <a href="#api-docs" class="px-6 py-2.5 bg-slate-100 text-slate-700 rounded-full font-medium hover:bg-slate-200 transition-all flex items-center gap-2 active:scale-95">
+                <a href="/doc.html" class="px-6 py-2.5 bg-slate-100 text-slate-700 rounded-full font-medium hover:bg-slate-200 transition-all flex items-center gap-2 active:scale-95">
                     <i data-lucide="book-open" class="w-[18px] h-[18px]"></i>
                     <span>查看文档</span>
                 </a>
             </div>
-        </div>
-
-        <!-- API Documentation Section -->
-        <div id="api-docs" class="mt-24 scroll-mt-24">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8">API 接口文档</h2>
-            
-            <!-- Introduction -->
-            <div class="prose prose-slate max-w-none mb-12">
-                <p class="text-slate-600 leading-relaxed">
-                    所有接口均支持 GET 请求，返回统一的 JSON 格式数据。支持跨域调用 (CORS)，可直接在前端项目中使用。
-                </p>
-            </div>
-
-            <!-- Netease API -->
-            <div class="mb-16">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-8 h-8 rounded bg-red-100 flex items-center justify-center text-red-600">
-                        <i data-lucide="music" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900">网易云音乐</h3>
-                    <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2.5 py-0.5 rounded">GET</span>
-                </div>
-                
-                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-900/5">
-                    <div class="flex items-center justify-between px-4 py-3 bg-slate-800 border-b border-slate-700">
-                        <div class="flex items-center gap-2">
-                            <span class="text-xs text-slate-400 font-mono">ENDPOINT</span>
-                            <code class="text-sm text-green-400 font-mono">/api/netease</code>
-                        </div>
-                    </div>
-                    <div class="p-6 overflow-x-auto">
-                        <div class="mb-4">
-                            <p class="text-slate-400 text-sm mb-2">请求示例：</p>
-                            <pre class="text-sm font-mono text-slate-300 bg-slate-800/50 p-3 rounded border border-slate-700">/api/netease?input=<span class="text-yellow-400">十年</span>&filter=<span class="text-purple-400">name</span>&page=<span class="text-blue-400">1</span></pre>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                            <div>
-                                <p class="text-slate-400 mb-2">参数说明：</p>
-                                <ul class="space-y-2 text-slate-300">
-                                    <li class="flex gap-2"><code class="text-red-400">input</code>: 搜索关键词或歌曲ID (必填)</li>
-                                    <li class="flex gap-2"><code class="text-red-400">filter</code>: <code class="text-slate-400">name</code>(名称) | <code class="text-slate-400">id</code>(ID) (默认 name)</li>
-                                    <li class="flex gap-2"><code class="text-red-400">page</code>: 页码 (默认 1)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- QQ Music API -->
-            <div class="mb-16">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-8 h-8 rounded bg-green-100 flex items-center justify-center text-green-600">
-                        <i data-lucide="music-2" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900">QQ音乐</h3>
-                    <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2.5 py-0.5 rounded">GET</span>
-                </div>
-                
-                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-900/5">
-                    <div class="flex items-center justify-between px-4 py-3 bg-slate-800 border-b border-slate-700">
-                        <div class="flex items-center gap-2">
-                            <span class="text-xs text-slate-400 font-mono">ENDPOINT</span>
-                            <code class="text-sm text-green-400 font-mono">/api/qq</code>
-                        </div>
-                    </div>
-                    <div class="p-6 overflow-x-auto">
-                        <div class="mb-4">
-                            <p class="text-slate-400 text-sm mb-2">请求示例：</p>
-                            <pre class="text-sm font-mono text-slate-300 bg-slate-800/50 p-3 rounded border border-slate-700">/api/qq?input=<span class="text-yellow-400">告白气球</span>&filter=<span class="text-purple-400">name</span></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kugou API -->
-            <div class="mb-16">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-8 h-8 rounded bg-blue-100 flex items-center justify-center text-blue-600">
-                        <i data-lucide="headphones" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900">酷狗音乐</h3>
-                    <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2.5 py-0.5 rounded">GET</span>
-                </div>
-                
-                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-900/5">
-                    <div class="flex items-center justify-between px-4 py-3 bg-slate-800 border-b border-slate-700">
-                        <div class="flex items-center gap-2">
-                            <span class="text-xs text-slate-400 font-mono">ENDPOINT</span>
-                            <code class="text-sm text-green-400 font-mono">/api/kugou</code>
-                        </div>
-                    </div>
-                    <div class="p-6 overflow-x-auto">
-                        <div class="mb-4">
-                            <p class="text-slate-400 text-sm mb-2">请求示例：</p>
-                            <pre class="text-sm font-mono text-slate-300 bg-slate-800/50 p-3 rounded border border-slate-700">/api/kugou?input=<span class="text-yellow-400">周杰伦</span>&filter=<span class="text-purple-400">name</span></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kuwo API -->
-            <div class="mb-16">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-8 h-8 rounded bg-yellow-100 flex items-center justify-center text-yellow-600">
-                        <i data-lucide="disc" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900">酷我音乐</h3>
-                    <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2.5 py-0.5 rounded">GET</span>
-                </div>
-                
-                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-900/5">
-                    <div class="flex items-center justify-between px-4 py-3 bg-slate-800 border-b border-slate-700">
-                        <div class="flex items-center gap-2">
-                            <span class="text-xs text-slate-400 font-mono">ENDPOINT</span>
-                            <code class="text-sm text-green-400 font-mono">/api/kuwo</code>
-                        </div>
-                    </div>
-                    <div class="p-6 overflow-x-auto">
-                        <div class="mb-4">
-                            <p class="text-slate-400 text-sm mb-2">请求示例：</p>
-                            <pre class="text-sm font-mono text-slate-300 bg-slate-800/50 p-3 rounded border border-slate-700">/api/kuwo?input=<span class="text-yellow-400">陈奕迅</span>&filter=<span class="text-purple-400">name</span></pre>
-                        </div>
-                        
-                        <!-- Response Example (Shared) -->
-                        <div class="mt-6 pt-6 border-t border-slate-700/50">
-                            <p class="text-slate-400 text-sm mb-3">通用响应结构：</p>
-                            <pre class="font-mono text-xs text-slate-300 leading-relaxed">{
-  "code": 200,
-  "data": [
-    {
-      "title": "十年",
-      "author": "陈奕迅",
-      "url": "http://.../song.mp3",
-      "pic": "http://.../cover.jpg",
-      "lrc": "[00:00.00]...",
-      "link": "http://music.163.com/...",
-      "songid": "123456"
-    }
-  ],
-  "error": ""
-}</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
     </main>
