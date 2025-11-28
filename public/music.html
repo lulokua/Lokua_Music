@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lokua Music</title>
+    <link rel="icon" href="/favicon.ico">
+    <!-- APlayer CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header__logo">
+                <i data-lucide="music-2"></i>
+            </div>
+            <h1>Lokua Music</h1>
+            <p class="text-secondary">连接全球音乐数据的桥梁</p>
+            
+            <div class="tags">
+                <span class="tag">网易云</span>
+                <span class="tag">QQ音乐</span>
+                <span class="tag">酷狗</span>
+                <span class="tag">酷我</span>
+                <span class="tag">Spotify</span>
+                <span class="tag">Apple Music</span>
+            </div>
+        </header>
+
+        <!-- Search Panel -->
+        <section class="card" id="searchPanel">
+            <div class="card__header">
+                <h2>开始探索</h2>
+                <!-- Filter Tabs -->
+                <div class="segmented-control" id="filterTabs">
+                    <button class="segment-btn active" data-filter="name">名称</button>
+                    <button class="segment-btn" data-filter="id">ID</button>
+                    <button class="segment-btn" data-filter="url">链接</button>
+                </div>
+            </div>
+
+            <form id="searchForm">
+                <!-- Input Field -->
+                <div class="input-group">
+                    <i data-lucide="search" class="input-icon"></i>
+                    <input type="text" id="searchInput" placeholder="搜索歌曲、歌手..." autocomplete="off" required>
+                </div>
+
+                <!-- Source Selection -->
+                <div class="field" id="typeGroup">
+                    <p class="meta-label" style="margin-bottom: 12px;">数据来源</p>
+                    <div class="source-grid" id="typeOptions">
+                        <!-- JS will populate this -->
+                    </div>
+                </div>
+
+                <div id="errorMsg" class="error-msg"></div>
+
+                <button type="submit" id="submitBtn" class="btn-primary">
+                    <span class="btn__text">搜索</span>
+                    <span class="btn__spinner spinner hidden"></span>
+                </button>
+            </form>
+        </section>
+
+        <!-- Player & Result Panel -->
+        <section class="card player-panel" id="playerPanel">
+            <div class="card__header">
+                <h2>正在播放</h2>
+                <button class="segment-btn" id="backBtn">返回搜索</button>
+            </div>
+
+            <div id="player" class="aplayer-container"></div>
+            <p id="playError" class="error-msg" style="display:none;"></p>
+
+            <div class="meta-info">
+                <div class="meta-row">
+                    <span class="meta-label">歌曲 ID</span>
+                    <div class="meta-value">
+                        <input id="songIdInput" class="meta-input" readonly>
+                    </div>
+                </div>
+                <div class="meta-row">
+                    <span class="meta-label">歌曲名称</span>
+                    <div class="meta-value">
+                        <input id="titleInput" class="meta-input" readonly>
+                    </div>
+                </div>
+                <div class="meta-row">
+                    <span class="meta-label">歌手</span>
+                    <div class="meta-value">
+                        <input id="authorInput" class="meta-input" readonly>
+                    </div>
+                </div>
+                <div class="meta-row">
+                    <span class="meta-label">来源链接</span>
+                    <div class="meta-value">
+                        <input id="linkInput" class="meta-input" readonly style="display:none;"> <!-- hidden input for copy if needed -->
+                        <a id="linkOpen" class="action-link" target="_blank">访问 <i data-lucide="external-link" style="width:14px; height:14px; vertical-align:middle;"></i></a>
+                    </div>
+                </div>
+                <div class="meta-row">
+                    <span class="meta-label">音频文件</span>
+                    <div class="meta-value">
+                        <input id="srcInput" class="meta-input" readonly style="display:none;">
+                        <a id="srcOpen" class="action-link" target="_blank">下载 MP3</a>
+                    </div>
+                </div>
+                <div class="meta-row">
+                    <span class="meta-label">歌词文件</span>
+                    <div class="meta-value">
+                        <input id="lrcInput" class="meta-input" readonly style="display:none;">
+                        <a id="lrcOpen" class="action-link" target="_blank">下载 LRC</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="loadMore" class="btn-primary" style="background: rgba(255,255,255,0.1); margin-top: 20px;">加载更多结果</button>
+        </section>
+
+        <footer class="footer">
+            <p>© 2024 Lokua Music. Designed for music lovers.</p>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
